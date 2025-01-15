@@ -60,6 +60,7 @@ export default function Safety() {
                 </defs>
                 <XAxis
                   axisLine={{ stroke: "white" }}
+                  tick={false}
                   label={{ value: "Count", position: "middle", fill: "white" }}
                 />
                 <YAxis
