@@ -34,7 +34,6 @@ const chartConfig = {
 export const Performance = () => {
   return (
     <div className="w-full flex flex-col p-3">
-      {/* Header */}
       <div className="bg-[#3298D8] text-lg text-white flex text-left font-bold p-2 gap-1 rounded-md">
         <img src="/public/performance.svg" alt="" className="size-8 border p-1 rounded " />
         Performance
