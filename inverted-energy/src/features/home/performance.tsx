@@ -6,6 +6,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const distanceChartData = [
   { vehicle: "2 W", kms: 6652.125 },
@@ -46,11 +47,13 @@ export const Performance = () => {
           <div className="">
             In million Kms
           </div>
-          <ChartContainer config={distanceChartConfig}>
+          <ChartContainer config={distanceChartConfig} className="aspect-auto w-full h-[248px]">
             <BarChart
               accessibilityLayer
               data={distanceChartData}
               barGap={2}
+              width={7}
+              height={3}
             >
               <CartesianGrid vertical={false} />
               <YAxis
@@ -85,7 +88,7 @@ export const Performance = () => {
           <h2 className="text-lg font-semibold">Average Daily Mileage</h2>
         </div>
         <div className="flex-grow p-4">
-          <ChartContainer config={chartConfig}>
+          <ChartContainer config={chartConfig} className="aspect-auto w-full h-[248px]">
             <BarChart
               accessibilityLayer
               data={mileageChartData}

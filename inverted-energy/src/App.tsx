@@ -11,11 +11,9 @@ function App() {
       <div className="h-[10%]">
         <Navbar />
       </div>
-      <div className='flex flex-row '>
-
+      <div className='flex flex-row'>
         <Performance />
         <Map />
-
       </div>
       <div className="flex flex-row">
 
