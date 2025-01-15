@@ -78,7 +78,6 @@ export default function Safety() {
                   }}
                   tickLine={false}
                   axisLine={{ stroke: "white" }}
-                  tickMargin={10} // Add margin between tick lines and bars
                 />
                 <ChartTooltip
                   cursor={false}
