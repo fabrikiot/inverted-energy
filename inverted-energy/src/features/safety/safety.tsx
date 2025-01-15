@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bar, BarChart, XAxis, YAxis } from "recharts";
-import { Pie, PieChart } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, Pie, PieChart } from "recharts";
 import {
   ChartContainer,
   ChartTooltip,
@@ -9,37 +8,38 @@ import {
 
 // Bar chart data
 const barChartData = [
-  { km: "0-10%", value: 5000 },
-  { km: "10-30%", value: 10000 },
-  { km: "30-90%", value: 15000 },
-  { km: ">90%", value: 15000 },
+  { value: 5000, fill: "#3298D8" }, // Green for the highest value
+  { value: 3000, fill: "#FFC000" }, // Yellow for the second value
+  { value: 4000, fill: "#ED7D31" }, // Red for the third value
+  { value: 1500, fill: "#3298D8" }, // Blue for the fourth value
+  { value: 500, fill: "#FFC000" }, // Orange for the fifth value
+  { value: 1000, fill: "#ED7D31" }, // Grey for the sixth value
 ];
-
-// Pie chart data with direct color values
-const pieChartData = [
-  { status: "charging", vechiles: 275, fill: "#70AD46" }, // Green for charging
-  { status: "idle", vechiles: 200, fill: "#FFC000" }, // Yellow for idle
-  { status: "discharging", vechiles: 187, fill: "#ED7D31" }, // Red for discharging
-  { status: "other", vechiles: 90, fill: "#A8A8A8" }, // Grey for other
+const pieChartData1 = [
+  { status: "Healthy", vechiles: 500, fill: "#3298D8" },
+  { status: "Full Checkup", vechiles: 50, fill: "#FFD700" }, // Yellow for idle
+  { status: "Primary Checkup", vechiles: 57, fill: "#FF6347" }, // Red for discharging
 ];
 
 // Chart config
 const chartConfig = {
   value: {
-    label: "Stats",
+    label: "Safety",
     color: "hsl(var(--chart-2))",
   },
 };
 
-export default function Stats() {
+export default function Safety() {
   return (
     <div className="w-full h-full flex flex-col p-2">
-      <div className="p-1 bg-[#08594A] font-bold text-white flex-1">Stats</div>
+      <div className="p-1 bg-[#08594A] font-bold text-white flex-1">
+        Safety Alerts
+      </div>
       <Card className="w-full flex flex-row gap-8 border-2 border-[#08594A] rounded-none">
         <Card className="w-1/2 border-none">
           <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold">
-              Vehicle at different SoC
+              Temperature Histogram
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
@@ -50,8 +50,9 @@ export default function Stats() {
               <BarChart
                 data={barChartData}
                 margin={{ left: 20, top: 30 }}
-                barSize={20}
                 width={window.innerWidth <= 768 ? 320 : 480}
+                barCategoryGap={0}
+                barGap={0}
               >
                 <defs>
                   <linearGradient id="gradient1" x1="0" y1="0" x2="0" y2="1">
@@ -60,19 +61,14 @@ export default function Stats() {
                   </linearGradient>
                 </defs>
                 <XAxis
-                  dataKey="km"
-                  type="category"
-                  tickLine={false}
                   axisLine={{ stroke: "white" }}
-                  tick={{
-                    fontSize: 12,
-                    style: { fill: "white" },
-                  }}
+                  label={{ value: "Count", position: "middle", fill: "white" }}
                 />
                 <YAxis
-                  domain={[0, 40000]}
+                  domain={[0, 5000]}
                   ticks={[
-                    0, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000,
+                    0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500,
+                    5000,
                   ]}
                   tick={{
                     fontSize: 12,
@@ -95,11 +91,22 @@ export default function Stats() {
             </ChartContainer>
           </CardContent>
         </Card>
+        <div className="flex flex-col mt-20 gap-y-3 ">
+          {pieChartData1.map((item, index) => (
+            <div key={index} className="flex items-center w-48 space-x-3">
+              <div
+                className="w-4 h-4 rounded-[3px]"
+                style={{ backgroundColor: item.fill }}
+              ></div>
+              <div className="text-white">{item.status}</div>
+            </div>
+          ))}
+        </div>
         <Card className="w-1/2 border-none">
           <CardContent className="flex flex-1 flex-col items-center justify-center">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[248px]"
+              className="aspect-auto w-full h-[248px] mt-9"
             >
               <PieChart>
                 <ChartTooltip
@@ -112,7 +119,7 @@ export default function Stats() {
                   }
                 />
                 <Pie
-                  data={pieChartData}
+                  data={pieChartData1}
                   dataKey="vechiles"
                   nameKey="status"
                   innerRadius={60}
@@ -120,17 +127,6 @@ export default function Stats() {
                 />
               </PieChart>
             </ChartContainer>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-16 ml-5">
-              {pieChartData.map((item, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <div
-                    className="w-4 h-4 rounded-[3px]"
-                    style={{ backgroundColor: item.fill }}
-                  ></div>
-                  <div className="text-white">{item.status}</div>
-                </div>
-              ))}
-            </div>
           </CardContent>
         </Card>
       </Card>
