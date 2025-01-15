@@ -1,21 +1,29 @@
-import "./App.css";
-import { Navbar } from "./features/nav-bar/navbar";
-import { Map } from "./features/home/map";
-import { Performance } from "./features/home/performance";
+import './App.css'
+import { Map } from './features/home/map'
+import { Performance } from './features/home/performance'
 import Stats from "./features/stats/stats";
-import Safety from "./features/safety/safety";
+import { Navbar } from './features/nav-bar/navbar.tsx'
 
 function App() {
   return (
-    <div className="bg-[#011826] w-screen h-[100vh]">
-      <Navbar />
-      <div className="flex flex-col">
-        {/* <Performance />
-        <Map /> */}
-        {/* <Stats /> */}
-        <Safety />
+    <div className="bg-[#011826] w-full h-screen flex flex-col">
+      <div className="h-[10%]">
+        <Navbar />
+      </div>
+      <div className='flex flex-row'>
+
+        <Performance />
+        <Map />
+
+      </div>
+      <div className="flex flex-row">
+
+        <Stats />
+        <Stats />
+        
       </div>
     </div>
+
   );
 }
 
