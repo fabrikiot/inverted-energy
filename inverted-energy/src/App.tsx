@@ -16,10 +16,8 @@ function App() {
         <Map />
       </div>
       <div className="flex flex-row">
-
         <Stats />
         <Safety />
-
       </div>
     </div>
 

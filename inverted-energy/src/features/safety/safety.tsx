@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bar, BarChart, XAxis, YAxis, Pie, PieChart } from "recharts";
 import {
@@ -6,16 +7,18 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Bar chart data
-const barChartData = [
-  { value: 5000, fill: "#3298D8" }, // Green for the highest value
-  { value: 3000, fill: "#FFC000" }, // Yellow for the second value
-  { value: 4000, fill: "#ED7D31" }, // Red for the third value
+// Initial Bar chart data
+const initialBarChartData = [
+  { value: 5500, fill: "#3298D8" },
+  { value: 2000, fill: "#FFC000" },
+  { value: 3000, fill: "#ED7D31" },
 ];
-const pieChartData1 = [
-  { status: "Healthy", vechiles: 500, fill: "#3298D8" },
-  { status: "Full Checkup", vechiles: 50, fill: "#FFD700" }, // Yellow for idle
-  { status: "Primary Checkup", vechiles: 57, fill: "#FF6347" }, // Red for discharging
+
+// Initial Pie chart data
+const initialPieChartData1 = [
+  { status: "Healthy", vechiles: 88, fill: "#3298D8" },
+  { status: "Full Checkup", vechiles: 2, fill: "#FFD700" },
+  { status: "Primary Checkup ", vechiles: 10, fill: "#FF6347" },
 ];
 
 // Chart config
@@ -27,6 +30,38 @@ const chartConfig = {
 };
 
 export default function Safety() {
+  const [barChartData, setBarChartData] = useState(initialBarChartData);
+  const [pieChartData1, setPieChartData1] = useState(initialPieChartData1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Update Bar chart data
+      setBarChartData((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+          value: fluctuate(item.value, 2, 3),
+        }))
+      );
+
+      // Update Pie chart data
+      setPieChartData1((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+          vechiles: fluctuate(item.vechiles, 2, 3),
+        }))
+      );
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Function to fluctuate numbers by a percentage range
+  const fluctuate = (value: number, minPercent: number, maxPercent: number) => {
+    const percentage = Math.random() * (maxPercent - minPercent) + minPercent;
+    const fluctuation = value * (percentage / 100);
+    return Math.max(0, Math.random() > 0.5 ? value + fluctuation : value - fluctuation);
+  };
+
   return (
     <div className="w-full h-full flex flex-col p-2">
       <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
@@ -52,7 +87,6 @@ export default function Safety() {
               <BarChart
                 data={barChartData}
                 margin={{ left: 20, top: 30 }}
-                width={window.innerWidth <= 768 ? 320 : 480}
               >
                 <defs>
                   <linearGradient id="gradient1" x1="0" y1="0" x2="0" y2="1">
@@ -64,14 +98,11 @@ export default function Safety() {
                   axisLine={{ stroke: "white" }}
                   tick={false}
                   label={{ value: "Count", position: "middle", fill: "white" }}
-                  interval={0} // Ensures all ticks are displayed
+                  interval={0}
                 />
                 <YAxis
                   domain={[0, 5000]}
-                  ticks={[
-                    0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500,
-                    5000,
-                  ]}
+                  ticks={[0, 1000, 2000, 3000, 4000, 5000]}
                   tick={{
                     fontSize: 12,
                     style: { fill: "white" },
@@ -84,7 +115,7 @@ export default function Safety() {
                   content={
                     <ChartTooltipContent
                       hideLabel
-                      className="bg-[#011826] border-[#08594A]"
+                      className="bg-[#011826] border-[#08594A] w-[2rem]"
                     />
                   }
                 />
