@@ -1,6 +1,6 @@
 export const Map = () => {
   return (
-    <div className="w-full h-full p-3 justify-between flex items-center">
+    <div className="w-full h-full p-3 gap-4 flex items-center">
       <img src="/public/map.png" className="h-[90%]" alt="" />
       <div className="flex flex-col gap-16">
         <div className="bg-[#3298d8] rounded-xl size-28 flex flex-col items-center justify-center">
@@ -17,7 +17,7 @@ export const Map = () => {
         </div>
         <div className="bg-[#3298d8] rounded-xl size-28 flex flex-col items-center justify-center">
           <span className="text-[24px] font-bold">
-            2M
+            150k
           </span>
           <span className="text-center text-sm font-thin">Vehicles in action</span>
         </div>

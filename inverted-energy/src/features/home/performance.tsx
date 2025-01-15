@@ -6,7 +6,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const distanceChartData = [
   { vehicle: "2 W", kms: 6652.125 },
@@ -21,10 +20,10 @@ const distanceChartConfig = {
 } satisfies ChartConfig
 
 const mileageChartData = [
-  { month: "2 W", desktop: 186 },
-  { month: "3 W", desktop: 305 },
-  { month: "L5", desktop: 237 },
-  { month: "Tractors", desktop: 73 },
+  { month: "2 W", desktop: 80 },
+  { month: "3 W", desktop: 70 },
+  { month: "L5", desktop: 100 },
+  { month: "Tractors", desktop: 60 },
 ]
 const chartConfig = {
   desktop: {
@@ -34,7 +33,7 @@ const chartConfig = {
 
 export const Performance = () => {
   return (
-    <div className="w-full flex flex-col p-3">
+    <div className="w-full  flex flex-col p-3">
       <div className="bg-[#3298D8] text-lg text-white flex text-left font-bold p-2 gap-1 rounded-md">
         <img src="/public/performance.svg" alt="" className="size-8 border p-1 rounded " />
         Performance
