@@ -34,7 +34,10 @@ const chartConfig = {
 export default function Stats() {
   return (
     <div className="w-full h-full flex flex-col p-2">
-      <div className="p-1 bg-[#08594A] font-bold text-white flex-1">Stats</div>
+      <div className="p-2 bg-[#08594A] font-bold flex text-white text-lg gap-1 ">
+        <img src="/public/stats.svg" alt="" className="size-8 border p-1 rounded " />
+        Stats
+      </div>
       <Card className="w-full flex flex-row gap-8 border-2 border-[#08594A] rounded-none">
         <Card className="w-1/2 border-none">
           <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
