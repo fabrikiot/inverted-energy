@@ -30,7 +30,11 @@ export default function Safety() {
   return (
     <div className="w-full h-full flex flex-col p-2">
       <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
-        <img src="/public/shield.svg" alt="" className="size-8 border p-1 rounded " />
+        <img
+          src="/public/shield.svg"
+          alt=""
+          className="size-8 border p-1 rounded "
+        />
         Safety Alerts
       </div>
       <Card className="w-full flex flex-row gap-8 border-2 border-[#C9891B] rounded-none">
@@ -49,8 +53,6 @@ export default function Safety() {
                 data={barChartData}
                 margin={{ left: 20, top: 30 }}
                 width={window.innerWidth <= 768 ? 320 : 480}
-                barCategoryGap={0}
-                barGap={0}
               >
                 <defs>
                   <linearGradient id="gradient1" x1="0" y1="0" x2="0" y2="1">
@@ -62,6 +64,7 @@ export default function Safety() {
                   axisLine={{ stroke: "white" }}
                   tick={false}
                   label={{ value: "Count", position: "middle", fill: "white" }}
+                  interval={0} // Ensures all ticks are displayed
                 />
                 <YAxis
                   domain={[0, 5000]}
@@ -75,6 +78,7 @@ export default function Safety() {
                   }}
                   tickLine={false}
                   axisLine={{ stroke: "white" }}
+                  tickMargin={10} // Add margin between tick lines and bars
                 />
                 <ChartTooltip
                   cursor={false}
