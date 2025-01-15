@@ -3,6 +3,7 @@ import { Map } from './features/home/map'
 import { Performance } from './features/home/performance'
 import Stats from "./features/stats/stats";
 import { Navbar } from './features/nav-bar/navbar.tsx'
+import Safety from './features/safety/safety.tsx';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
       <div className="flex flex-row">
 
         <Stats />
-        <Stats />
-        
+        <Safety />
+
       </div>
     </div>
 

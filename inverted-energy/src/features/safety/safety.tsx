@@ -11,9 +11,6 @@ const barChartData = [
   { value: 5000, fill: "#3298D8" }, // Green for the highest value
   { value: 3000, fill: "#FFC000" }, // Yellow for the second value
   { value: 4000, fill: "#ED7D31" }, // Red for the third value
-  { value: 1500, fill: "#3298D8" }, // Blue for the fourth value
-  { value: 500, fill: "#FFC000" }, // Orange for the fifth value
-  { value: 1000, fill: "#ED7D31" }, // Grey for the sixth value
 ];
 const pieChartData1 = [
   { status: "Healthy", vechiles: 500, fill: "#3298D8" },
@@ -32,10 +29,11 @@ const chartConfig = {
 export default function Safety() {
   return (
     <div className="w-full h-full flex flex-col p-2">
-      <div className="p-1 bg-[#08594A] font-bold text-white flex-1">
+      <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
+        <img src="/public/shield.svg" alt="" className="size-8 border p-1 rounded " />
         Safety Alerts
       </div>
-      <Card className="w-full flex flex-row gap-8 border-2 border-[#08594A] rounded-none">
+      <Card className="w-full flex flex-row gap-8 border-2 border-[#C9891B] rounded-none">
         <Card className="w-1/2 border-none">
           <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold">
@@ -122,8 +120,8 @@ export default function Safety() {
                   data={pieChartData1}
                   dataKey="vechiles"
                   nameKey="status"
-                  innerRadius={60}
-                  outerRadius={80}
+                  innerRadius={80}
+                  outerRadius={110}
                 />
               </PieChart>
             </ChartContainer>
