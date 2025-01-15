@@ -2,10 +2,11 @@ import "./App.css";
 
 function App() {
 
-  return <>
-  
-  <div>hellooo</div>
-  </>;
+  return (
+    <>
+      
+    </>
+  )
 }
 
 export default App;
