@@ -138,7 +138,7 @@ export default function Stats() {
                   content={
                     <ChartTooltipContent
                       hideLabel
-                      className="bg-[#011826] border-[#08594A] w-[2rem]"
+                      className="bg-[#011826] border-[#08594A] w-[3rem]"
                     />
                   }
                 />
