@@ -109,7 +109,6 @@ export default function Safety() {
                   }}
                   tickLine={false}
                   axisLine={{ stroke: "white" }}
-                  tickMargin={10}
                 />
                 <ChartTooltip
                   cursor={false}
