@@ -33,7 +33,7 @@ const chartConfig = {
 
 export const Performance = () => {
   return (
-    <div className="w-full  flex flex-col p-3">
+    <div className="w-full h-[50%] flex flex-col p-3">
       <div className="bg-[#3298D8] text-lg text-white flex text-left font-bold p-2 gap-1 rounded-md">
         <img src="/public/performance.svg" alt="" className="size-8 border p-1 rounded " />
         Performance
@@ -46,7 +46,7 @@ export const Performance = () => {
           <div className="">
             In million Kms
           </div>
-          <ChartContainer config={distanceChartConfig} className="aspect-auto w-full h-[248px]">
+          <ChartContainer config={distanceChartConfig} className="aspect-auto w-full h-[50%]">
             <BarChart
               accessibilityLayer
               data={distanceChartData}
@@ -87,7 +87,7 @@ export const Performance = () => {
           <h2 className="text-lg font-semibold">Average Daily Mileage</h2>
         </div>
         <div className="flex-grow p-4">
-          <ChartContainer config={chartConfig} className="aspect-auto w-full h-[248px]">
+          <ChartContainer config={chartConfig} className="aspect-auto w-full h-[50%]">
             <BarChart
               accessibilityLayer
               data={mileageChartData}
