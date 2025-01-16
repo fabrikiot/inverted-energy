@@ -16,10 +16,10 @@ const initialBarChartData = [
 ];
 
 const initialPieChartData = [
-  { status: "charging", vechiles: 10, fill: "#70AD46" },
-  { status: "idle", vechiles: 20, fill: "#FFC000" },
-  { status: "discharging", vechiles: 70, fill: "#ED7D31" },
-  { status: "other", vechiles: 20, fill: "#A8A8A8" },
+  { status: "Charging", vechiles: 10, fill: "#70AD46" },
+  { status: "Idle", vechiles: 20, fill: "#FFC000" },
+  { status: "Discharging", vechiles: 70, fill: "#ED7D31" },
+  { status: "Other", vechiles: 20, fill: "#A8A8A8" },
 ];
 
 const chartConfig = {
