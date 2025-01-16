@@ -62,7 +62,7 @@ export default function Stats() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col p-2">
+    <div className="w-full h-[250px] flex flex-col pt-2">
       <div className="p-2 bg-[#08594A] font-bold flex text-white text-lg gap-1 ">
         <img src="/public/stats.svg" alt="" className="size-8 border p-1 rounded " />
         Stats
@@ -77,7 +77,7 @@ export default function Stats() {
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[248px]"
+              className="aspect-auto w-full h-[145px]"
             >
               <BarChart
                 data={barChartData}
@@ -126,7 +126,7 @@ export default function Stats() {
           <CardContent className="flex flex-1 flex-col items-center justify-center">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[248px]"
+              className="aspect-auto w-full h-[145px]"
             >
               <PieChart>
                 <ChartTooltip
@@ -142,8 +142,8 @@ export default function Stats() {
                   data={pieChartData}
                   dataKey="vechiles"
                   nameKey="status"
-                  innerRadius={60}
-                  outerRadius={80}
+                  innerRadius={40}
+                  outerRadius={60}
                 />
               </PieChart>
             </ChartContainer>
