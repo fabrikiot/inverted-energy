@@ -8,6 +8,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
+
 // Distance chart data and config
 const distanceChartData = [
   { vehicle: "2 W", kms: 6652.125 },
@@ -23,11 +24,11 @@ const distanceChartConfig = {
 
 // Mileage chart data and config
 const mileageChartData = [
-  { month: "2 W", desktop: 186 },
-  { month: "3 W", desktop: 305 },
-  { month: "L5", desktop: 237 },
-  { month: "Tractors", desktop: 73 },
-];
+  { month: "2 W", desktop: 80 },
+  { month: "3 W", desktop: 70 },
+  { month: "L5", desktop: 100 },
+  { month: "Tractors", desktop: 60 },
+]
 const chartConfig = {
   desktop: {
     label: "Kmpl",

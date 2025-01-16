@@ -17,7 +17,7 @@ export const Map = () => {
         </div>
         <div className="bg-[#3298d8] rounded-xl size-20 flex flex-col items-center justify-center">
           <span className="text-[24px] font-bold">
-            2M
+            150k
           </span>
           <span className="text-center text-sm font-thin">Vehicles in action</span>
         </div>

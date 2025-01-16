@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
 import { Pie, PieChart } from "recharts";
@@ -7,31 +8,59 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Bar chart data
-const barChartData = [
-  { km: "0-10%", value: 5000 },
-  { km: "10-30%", value: 10000 },
-  { km: "30-90%", value: 15000 },
-  { km: ">90%", value: 15000 },
+const initialBarChartData = [
+  { km: "0-10%", value: 30 },
+  { km: "10-30%", value: 13 },
+  { km: "30-90%", value: 60 },
+  { km: ">90%", value: 24 },
 ];
 
-// Pie chart data with direct color values
-const pieChartData = [
-  { status: "charging", vechiles: 275, fill: "#70AD46" }, // Green for charging
-  { status: "idle", vechiles: 200, fill: "#FFC000" }, // Yellow for idle
-  { status: "discharging", vechiles: 187, fill: "#ED7D31" }, // Red for discharging
-  { status: "other", vechiles: 90, fill: "#A8A8A8" }, // Grey for other
+const initialPieChartData = [
+  { status: "charging", vechiles: 10, fill: "#70AD46" },
+  { status: "idle", vechiles: 20, fill: "#FFC000" },
+  { status: "discharging", vechiles: 70, fill: "#ED7D31" },
+  { status: "other", vechiles: 20, fill: "#A8A8A8" },
 ];
 
-// Chart config
 const chartConfig = {
   value: {
     label: "Stats",
-    color: "hsl(var(--chart-2))",
   },
 };
 
 export default function Stats() {
+  const [barChartData, setBarChartData] = useState(initialBarChartData);
+  const [pieChartData, setPieChartData] = useState(initialPieChartData);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Update bar chart data
+      setBarChartData((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+          value: fluctuate(item.value, 2, 3),
+        }))
+      );
+
+      // Update pie chart data
+      setPieChartData((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+          vechiles: fluctuate(item.vechiles, 2, 3),
+        }))
+      );
+    }, 60000); // Update every 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Function to fluctuate numbers by a percentage range
+  const fluctuate = (value: number, minPercent: number, maxPercent: number) => {
+    const percentage = Math.random() * (maxPercent - minPercent) + minPercent;
+    const fluctuation = value * (percentage / 100);
+    return Math.random() > 0.5 ? value + fluctuation : value - fluctuation;
+  };
+
   return (
     <div className="w-full h-[250px] flex flex-col pt-2">
       <div className="p-2 bg-[#08594A] font-bold flex text-white text-lg gap-1 ">
@@ -54,7 +83,6 @@ export default function Stats() {
                 data={barChartData}
                 margin={{ left: 20, top: 30 }}
                 barSize={20}
-                width={window.innerWidth <= 768 ? 320 : 480}
               >
                 <defs>
                   <linearGradient id="gradient1" x1="0" y1="0" x2="0" y2="1">
@@ -73,10 +101,6 @@ export default function Stats() {
                   }}
                 />
                 <YAxis
-                  domain={[0, 40000]}
-                  ticks={[
-                    0, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000,
-                  ]}
                   tick={{
                     fontSize: 12,
                     style: { fill: "white" },
