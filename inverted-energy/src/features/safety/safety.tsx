@@ -28,7 +28,7 @@ const chartConfig = {
 
 export default function Safety() {
   return (
-    <div className="w-full h-full flex flex-col p-2">
+    <div className="w-full h-[250px] flex flex-col pt-2 pl-2">
       <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
         <img
           src="/public/shield.svg"
@@ -47,7 +47,7 @@ export default function Safety() {
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[248px]"
+              className="aspect-auto w-full h-[145px]"
             >
               <BarChart
                 data={barChartData}
@@ -108,7 +108,7 @@ export default function Safety() {
           <CardContent className="flex flex-1 flex-col items-center justify-center">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[248px] mt-9"
+              className="aspect-auto w-full h-[150px] mt-9"
             >
               <PieChart>
                 <ChartTooltip
@@ -124,8 +124,8 @@ export default function Safety() {
                   data={pieChartData1}
                   dataKey="vechiles"
                   nameKey="status"
-                  innerRadius={80}
-                  outerRadius={110}
+                  innerRadius={50}
+                  outerRadius={70}
                 />
               </PieChart>
             </ChartContainer>
