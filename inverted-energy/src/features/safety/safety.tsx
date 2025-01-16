@@ -115,7 +115,7 @@ export default function Safety() {
                   content={
                     <ChartTooltipContent
                       hideLabel
-                      className="bg-[#011826] border-[#08594A] w-[2rem]"
+                      className="bg-[#011826] border-[#c9891b] w-[2rem]"
                     />
                   }
                 />
@@ -147,7 +147,7 @@ export default function Safety() {
                   content={
                     <ChartTooltipContent
                       hideLabel
-                      className="bg-[#011826] border-[#08594A]"
+                      className="bg-[#011826] border-[#c9891b]"
                     />
                   }
                 />
