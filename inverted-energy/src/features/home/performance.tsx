@@ -126,7 +126,6 @@ export default function Performance() {
                   type="category"
                   tickLine={false}
                   tickMargin={10}
-                  axisLine={false}
                   tick={{
                     fontSize: 12,
                     style: { fill: "white" },

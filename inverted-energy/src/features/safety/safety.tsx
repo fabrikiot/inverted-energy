@@ -119,7 +119,7 @@ export default function Safety() {
                     />
                   }
                 />
-                <Bar dataKey="value" fill="url(#gradient1)" />
+                <Bar dataKey="value"  fill="url(#gradient1)" />
               </BarChart>
             </ChartContainer>
           </CardContent>
@@ -147,7 +147,7 @@ export default function Safety() {
                   content={
                     <ChartTooltipContent
                       hideLabel
-                      className="bg-[#011826] border-[#c9891b] w-[120px]"
+                      className="bg-[#011826] border-[#c9891b] w-[10rem]"
                     />
                   }
                 />
