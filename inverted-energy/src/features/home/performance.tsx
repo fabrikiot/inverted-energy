@@ -8,7 +8,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-
 // Distance chart data and config
 const distanceChartData = [
   { vehicle: "2 W", kms: 6652.125 },
@@ -28,7 +27,7 @@ const mileageChartData = [
   { month: "3 W", desktop: 70 },
   { month: "L5", desktop: 100 },
   { month: "Tractors", desktop: 60 },
-]
+];
 const chartConfig = {
   desktop: {
     label: "Kmpl",
@@ -37,7 +36,7 @@ const chartConfig = {
 
 export default function Performance() {
   return (
-    <div className="w-full h-[500px] flex flex-col">
+    <div className="w-1/2 h-full flex flex-col">
       <div className="p-2 bg-[#3298D8] font-bold flex text-white text-lg gap-1 ">
         <img
           src="/public/performance.svg"
@@ -47,17 +46,17 @@ export default function Performance() {
         Performance
       </div>
       <Card className="w-full flex flex-col border-2 border-[#3298D8] rounded-none">
-        <Card className="w-full border-none">
-          <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
-            <CardTitle className="text-base text-white font-semibold">
+        <Card className="w-full border-none h-[57%]">
+          <CardHeader className="flex flex-row items-center px-4 pt-4  gap-0.5 sm:px-6 lg:px-8">
+            <CardTitle className="text-base text-white font-semibold py-2">
               Total Distance Covered
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[1.6%] sm:gap-8">
             <div className="text-white">In million Kms</div>
             <ChartContainer
               config={distanceChartConfig}
-              className="aspect-auto w-full h-[150px]"
+              className="aspect-auto w-[90%] h-[150px]"
             >
               <BarChart
                 data={distanceChartData}
@@ -96,16 +95,16 @@ export default function Performance() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <Card className="w-full border-none">
-          <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
-            <CardTitle className="text-base text-white font-semibold">
+        <Card className="w-full border-none h-[41%]">
+          <CardHeader className="flex flex-row items-center px-4 pt-4  gap-0.5 sm:px-6 lg:px-8">
+            <CardTitle className="text-base text-white font-semibold py-2.5">
               Average Daily Mileage
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 pt-4 sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[150px]"
+              className="aspect-auto w-[90%] h-[150px]"
             >
               <BarChart
                 data={mileageChartData}

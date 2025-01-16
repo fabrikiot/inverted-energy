@@ -62,19 +62,23 @@ export default function Stats() {
   };
 
   return (
-    <div className="w-full h-[250px] flex flex-col pt-2">
+    <div className="w-1/2 h-full flex flex-col">
       <div className="p-2 bg-[#08594A] font-bold flex text-white text-lg gap-1 ">
-        <img src="/public/stats.svg" alt="" className="size-8 border p-1 rounded " />
+        <img
+          src="/public/stats.svg"
+          alt=""
+          className="size-8 border p-1 rounded "
+        />
         Stats
       </div>
-      <Card className="w-full flex flex-row gap-8 border-2 border-[#08594A] rounded-none">
+      <Card className="w-full flex flex-row gap-8 py-2 border-2 border-[#08594A] rounded-none">
         <Card className="w-1/2 border-none">
-          <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
+          <CardHeader className="flex flex-row items-center px-4 py-4 gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold">
               Vehicle at different SoC
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[2.8%] sm:gap-8">
             <ChartContainer
               config={chartConfig}
               className="aspect-auto w-full h-[145px]"

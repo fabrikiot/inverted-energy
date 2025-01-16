@@ -8,14 +8,14 @@ import Performance from "./features/home/performance.tsx";
 function App() {
   return (
     <div className="bg-[#011826] w-full h-screen flex flex-col">
-      <div className="">
+      <div className="w-full h-[8.42vh]">
         <Navbar />
       </div>
-      <div className="flex flex-1 flex-row">
+      <div className="flex w-full h-[60vh]">
         <Performance />
         <Map />
       </div>
-      <div className="flex flex-1 flex-row">
+      <div className="flex w-full h-[31vh]">
         <Stats />
         <Safety />
       </div>

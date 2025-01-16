@@ -63,7 +63,7 @@ export default function Safety() {
   };
 
   return (
-    <div className="w-full h-[250px] flex flex-col pt-2 pl-2">
+    <div className="w-1/2 h-full flex flex-col pl-1">
       <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
         <img
           src="/public/shield.svg"
@@ -72,14 +72,14 @@ export default function Safety() {
         />
         Safety Alerts
       </div>
-      <Card className="w-full flex flex-row gap-8 border-2 border-[#C9891B] rounded-none">
+      <Card className="w-full flex flex-row gap-8 py-2 border-2 border-[#C9891B] rounded-none">
         <Card className="w-1/2 border-none">
           <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold">
               Temperature Histogram
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-4 sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[3.8%] sm:gap-8">
             <ChartContainer
               config={chartConfig}
               className="aspect-auto w-full h-[145px]"
