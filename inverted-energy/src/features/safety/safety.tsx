@@ -82,7 +82,7 @@ export default function Safety() {
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[3.8%] sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[145px]"
+              className="aspect-auto w-full h-[144px]"
             >
               <BarChart
                 data={barChartData}

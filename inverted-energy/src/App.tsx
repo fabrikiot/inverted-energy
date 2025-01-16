@@ -15,7 +15,7 @@ function App() {
         <Performance />
         <Map />
       </div>
-      <div className="flex w-full h-[31vh]">
+      <div className="flex w-full h-[40vh]">
         <Stats />
         <Safety />
       </div>

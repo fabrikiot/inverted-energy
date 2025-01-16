@@ -45,14 +45,14 @@ export default function Performance() {
         />
         Performance
       </div>
-      <Card className="w-full flex flex-col border-2 border-[#3298D8] rounded-none">
-        <Card className="w-full border-none h-[57%]">
-          <CardHeader className="flex flex-row items-center px-4 pt-4  gap-0.5 sm:px-6 lg:px-8">
+      <Card className="w-full flex flex-col h-[90.6%] border-2 border-[#3298D8] rounded-none">
+        <Card className="w-full border-none ">
+          <CardHeader className="flex flex-row items-center px-4 gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold py-2">
               Total Distance Covered
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[1.6%] sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6  sm:gap-8">
             <div className="text-white">In million Kms</div>
             <ChartContainer
               config={distanceChartConfig}
@@ -95,8 +95,8 @@ export default function Performance() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <Card className="w-full border-none h-[41%]">
-          <CardHeader className="flex flex-row items-center px-4 pt-4  gap-0.5 sm:px-6 lg:px-8">
+        <Card className="w-full border-none">
+          <CardHeader className="flex flex-row items-center px-4  gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold py-2.5">
               Average Daily Mileage
             </CardTitle>
@@ -104,7 +104,7 @@ export default function Performance() {
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 pt-4 sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-[90%] h-[150px]"
+              className="aspect-auto w-[90%] h-[200px]"
             >
               <BarChart
                 data={mileageChartData}
