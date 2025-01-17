@@ -7,13 +7,15 @@ import AverageDailyMileage from "./Avg-daily-mileage";
 export default function Performance() {
   return (
     <div className="w-[35%] h-full flex flex-col">
-      <div className="p-2 py-1.5 bg-[#3298D8] font-bold flex h-auto text-white text-lg gap-1 ">
-        <img
-          src="/public/performance.svg"
-          alt=""
-          className="size-8 border p-1 rounded"
-        />
-        Performance
+      <div className="p-2 py-2 bg-[#3298D8] font-bold flex h-auto text-white text-lg gap-1 relative">
+        <div className="flex items-center justify-center size-20 absolute top-[-38.5%] left-[-2.5%]">
+          <img
+            src="/performance.png"
+            alt="performance"
+            className=" p-1  w-full h-full object-contain "
+          />
+        </div>
+        <span className="pl-[6%]">Performance</span>
       </div>
       <Card className="w-full flex flex-col gap-5 h-[92.2%] border-2 border-[#3298D8] rounded-none">
         <Card className="w-full border-none ">
@@ -28,7 +30,7 @@ export default function Performance() {
               style={{
                 writingMode: "vertical-rl",
                 transform: "rotate(180deg)",
-              }} 
+              }}
             >
               In million Kms
             </div>
