@@ -26,7 +26,7 @@ function App() {
           <div className="loader"></div>
         </div>
       )}
-      <div className="w-full h-[8.42vh]">
+      <div className="w-full h-[7.5vh]">
         <Navbar />
       </div>
       <div className="flex w-full h-[65vh]">
