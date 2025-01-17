@@ -67,8 +67,8 @@ export default function Stats() {
         <img src="/public/Stats.svg" alt="" className="size-8" />
         Stats
       </div>
-      <Card className="w-full h-full  flex border-2 bg-[#011826] border-[#08594A] rounded">
-        <Card className="w-1/2 border-none flex flex-col justify-between">
+      <Card className="w-full h-full justify-between flex border-2 bg-[#011826] border-[#08594A] rounded">
+        <Card className="2xl:w-[45%] w-[59%] border-none flex flex-col justify-between">
           <CardHeader className="flex flex-row items-center px-4 pb-1 pt-[5%] gap-0.5 sm:px-6 lg:px-8">
             <CardTitle className="text-base text-white font-semibold">
               Vehicle at different SoC
@@ -122,8 +122,8 @@ export default function Stats() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <Card className="w-1/2 border-none flex flex-col justify-between">
-          <CardContent className="h-full flex flex-1 flex-col items-center justify-between py-[4%]">
+        <Card className="2xl:w-[45%] w-[39%] border-none flex flex-col justify-between 2xl:py-[3%] lg:py-[5%]">
+          <CardContent className="h-full flex flex-1 flex-col items-center justify-around ">
             <ChartContainer
               config={chartConfig}
               className="aspect-auto w-full h-[145px]"
@@ -147,14 +147,14 @@ export default function Stats() {
                 />
               </PieChart>
             </ChartContainer>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-16 ml-5">
+            <div className="grid grid-cols-2 gap-y-2 md:gap-x-2 2xl:gap-x-12 ">
               {pieChartData.map((item, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <div
-                    className="w-4 h-4 rounded-[3px]"
+                    className="lg:w-4 lg:h-4 md:w-3 md:h-3 rounded-[3px]"
                     style={{ backgroundColor: item.fill }}
                   ></div>
-                  <div className="text-white">{item.status}</div>
+                  <div className="text-white xl:text-base">{item.status}</div>
                 </div>
               ))}
             </div>
