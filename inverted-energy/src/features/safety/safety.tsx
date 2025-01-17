@@ -17,8 +17,8 @@ const initialBarChartData = [
 // Initial Pie chart data
 const initialPieChartData1 = [
   { status: "Healthy", vechiles: 88, fill: "#3298D8" },
-  { status: "Full Checkup", vechiles: 2, fill: "#FFD700" },
-  { status: "Primary Checkup ", vechiles: 10, fill: "#ED7D31" },
+  { status: "Full Check-up", vechiles: 2, fill: "#FFD700" },
+  { status: "Primary Check-up ", vechiles: 10, fill: "#ED7D31" },
 ];
 
 // Chart config
@@ -66,14 +66,14 @@ export default function Safety() {
   };
 
   return (
-    <div className="w-[65%] h-full flex flex-col pl-1">
-      <div className="px-2 py-1.5 bg-[#C9891B] font-bold flex h-auto text-white text-lg gap-1 ">
+    <div className="w-[59.7%] h-full flex flex-col bg-[#C9891B]  rounded">
+      <div className="px-2 py-1.5 bg-[#C9891B] font-bold flex rounded h-auto text-white text-lg gap-1 ">
         <img src="/public/Safety Alerts.svg" alt="" className="size-8 " />
         Safety Alerts
       </div>
-      <Card className="w-full flex flex-row items-center gap-10 px-10 border-2 border-[#C9891B] rounded-none">
-        <Card className="w-[45%] border-none">
-          <CardHeader className="flex flex-row items-center px-4 pb-1 pt-2.5  gap-0.5 sm:px-3 lg:px-4">
+      <Card className="w-full h-full flex flex-row items-center gap-10 px-10 border-2 border-[#C9891B] bg-[#011826] rounded">
+        <Card className="w-[45%] h-full border-none flex flex-col justify-between">
+          <CardHeader className="flex flex-row items-center px-4 pb-1 pt-[5%]  gap-0.5 sm:px-3 lg:px-4">
             <CardTitle className="text-base text-white font-semibold">
               Temperature Histogram
             </CardTitle>
@@ -118,7 +118,7 @@ export default function Safety() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <div className="flex w-[50%] items-center gap-7">
+        <div className="flex w-[50%] items-center">
           <div className="flex flex-col h-auto gap-y-3 ml-24 ">
             {pieChartData1.map((item, index) => (
               <div key={index} className="flex items-center w-48 space-x-3">
@@ -130,7 +130,7 @@ export default function Safety() {
               </div>
             ))}
           </div>
-          <Card className="w-[35%] border-none">
+          <Card className="w-[40%] border-none">
             <CardContent className="flex  items-center justify-center">
               <ChartContainer
                 config={chartConfig}
