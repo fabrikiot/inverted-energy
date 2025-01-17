@@ -1,5 +1,4 @@
-"use client";
-
+import React, { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -42,23 +41,14 @@ const CustomXAxisLabels: React.FC<{
   return (
     <>
       {data.map((entry, index) => {
-        const x = (xScale(entry.vehicle) || 0) + xScale.bandwidth() / 2 - 15; 
+        const x = (xScale(entry.vehicle) || 0) + xScale.bandwidth() / 2 - 15;
         return (
-          <g key={`custom-label-${index}`} transform={`translate(${x}, ${yPosition})`}>
-            <image
-              href={entry.img}
-              width="24"
-              height="22"
-              x={-10} 
-              y={-10} 
-            />
-            <text
-              x={15} 
-              y={5} 
-              fontSize="12"
-              fill="white"
-              textAnchor="start"
-            >
+          <g
+            key={`custom-label-${index}`}
+            transform={`translate(${x}, ${yPosition})`}
+          >
+            <image href={entry.img} width="24" height="22" x={-10} y={-10} />
+            <text x={15} y={5} fontSize="12" fill="white" textAnchor="start">
               {entry.vehicle}
             </text>
           </g>
@@ -69,6 +59,23 @@ const CustomXAxisLabels: React.FC<{
 };
 
 const TotalDistance: React.FC = () => {
+  const [chartWidth, setChartWidth] = useState(480);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setChartWidth(window.innerWidth <= 768 ? 320 : 480);
+    };
+
+    // Set initial width
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="aspect-auto w-[93%] h-[200px]">
       <ChartContainer
@@ -78,7 +85,7 @@ const TotalDistance: React.FC = () => {
         <BarChart
           data={distanceChartData}
           barGap={2}
-          width={window.innerWidth <= 768 ? 320 : 480}
+          width={chartWidth}
           height={250}
         >
           <CartesianGrid vertical={false} />
@@ -92,8 +99,8 @@ const TotalDistance: React.FC = () => {
           <XAxis
             dataKey="vehicle"
             tickLine={false}
-            tickMargin={35} 
-            tick={false} 
+            tickMargin={35}
+            tick={false}
           />
           <ChartTooltip
             cursor={false}
