@@ -9,9 +9,9 @@ import {
 
 // Initial Bar chart data
 const initialBarChartData = [
-  { value: 5500, fill: "#3298D8" },
-  { value: 2000, fill: "#FFC000" },
-  { value: 3000, fill: "#ED7D31" },
+  { value: 118800, fill: "#3298D8" },
+  { value: 2700, fill: "#FFC000" },
+  { value: 13500, fill: "#ED7D31" },
 ];
 
 // Initial Pie chart data
@@ -101,8 +101,6 @@ export default function Safety() {
                   interval={0}
                 />
                 <YAxis
-                  domain={[0, 5000]}
-                  ticks={[0, 1000, 2000, 3000, 4000, 5000]}
                   tick={{
                     fontSize: 12,
                     style: { fill: "white" },
