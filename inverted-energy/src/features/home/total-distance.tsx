@@ -70,7 +70,7 @@ const CustomXAxisLabels: React.FC<{
 
 const TotalDistance: React.FC = () => {
   return (
-    <div className="aspect-auto w-[90%] h-[200px]">
+    <div className="aspect-auto w-[93%] h-[200px]">
       <ChartContainer
         config={distanceChartConfig}
         className="aspect-auto w-[90%] h-full"
