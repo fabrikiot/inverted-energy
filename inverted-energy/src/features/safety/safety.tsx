@@ -18,7 +18,7 @@ const initialBarChartData = [
 const initialPieChartData1 = [
   { status: "Healthy", vechiles: 88, fill: "#3298D8" },
   { status: "Full Checkup", vechiles: 2, fill: "#FFD700" },
-  { status: "Primary Checkup ", vechiles: 10, fill: "#FF6347" },
+  { status: "Primary Checkup ", vechiles: 10, fill: "#ED7D31" },
 ];
 
 // Chart config
@@ -68,11 +68,7 @@ export default function Safety() {
   return (
     <div className="w-[65%] h-full flex flex-col pl-1">
       <div className="px-2 py-1.5 bg-[#C9891B] font-bold flex h-auto text-white text-lg gap-1 ">
-        <img
-          src="/public/Safety Alerts.svg"
-          alt=""
-          className="size-8 "
-        />
+        <img src="/public/Safety Alerts.svg" alt="" className="size-8 " />
         Safety Alerts
       </div>
       <Card className="w-full flex flex-row items-center gap-10 px-10 border-2 border-[#C9891B] rounded-none">
@@ -122,8 +118,8 @@ export default function Safety() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <div className="flex w-[50%] items-center">
-          <div className="flex flex-col h-auto gap-y-3 ml-32 ">
+        <div className="flex w-[50%] items-center gap-7">
+          <div className="flex flex-col h-auto gap-y-3 ml-24 ">
             {pieChartData1.map((item, index) => (
               <div key={index} className="flex items-center w-48 space-x-3">
                 <div
