@@ -44,15 +44,6 @@ export default function Performance() {
             </CardTitle>
           </CardHeader>
           <CardContent className="flex items-center justify-end gap-6 pt-4 sm:gap-8 relative">
-            <div
-              className="absolute left-10 top-[24%]  -translate-y-[30px] text-white text-md"
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-              }}
-            >
-              In million Kms
-            </div>
             <AverageDailyMileage />
           </CardContent>
         </Card>
