@@ -69,9 +69,9 @@ export default function Safety() {
     <div className="w-[65%] h-full flex flex-col pl-1">
       <div className="px-2 py-1.5 bg-[#C9891B] font-bold flex h-auto text-white text-lg gap-1 ">
         <img
-          src="/public/shield.svg"
+          src="/public/Safety Alerts.svg"
           alt=""
-          className="size-8 border p-1 rounded "
+          className="size-8 "
         />
         Safety Alerts
       </div>

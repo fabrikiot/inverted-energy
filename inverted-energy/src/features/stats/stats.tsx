@@ -19,7 +19,8 @@ const initialPieChartData = [
   { status: "Charging", vechiles: 10, fill: "#70AD46" },
   { status: "Idle", vechiles: 20, fill: "#FFC000" },
   { status: "Discharging", vechiles: 70, fill: "#ED7D31" },
-  { status: "other", vechiles: 20, fill: "#A8A8A8" },];
+  { status: "other", vechiles: 20, fill: "#A8A8A8" },
+];
 
 const chartConfig = {
   value: {
@@ -64,9 +65,9 @@ export default function Stats() {
     <div className="w-[35%] h-full flex flex-col">
       <div className="px-2 py-1.5 bg-[#08594A] font-bold flex text-white h-auto text-lg gap-1 ">
         <img
-          src="/public/stats.svg"
+          src="/public/Stats.svg"
           alt=""
-          className="size-8 border p-1 rounded "
+          className="size-8"
         />
         Stats
       </div>

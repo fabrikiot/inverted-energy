@@ -19,11 +19,11 @@ function App() {
 
   return (
     <div className="bg-[#011826] w-full h-screen flex flex-col relative">
-      {loading && (
+      {/* {loading && (
         <div className="absolute top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#0118267e] z-50">
           <div className="loader"></div>
         </div>
-      )}
+      )} */}
       <div className="w-full h-[7.5vh]">
         <Navbar />
       </div>
