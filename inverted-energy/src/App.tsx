@@ -11,11 +11,11 @@ function App() {
       <div className="w-full h-[8.42vh]">
         <Navbar />
       </div>
-      <div className="flex w-full h-[60vh]">
+      <div className="flex w-full h-[65vh]">
         <Performance />
         <Map />
       </div>
-      <div className="flex w-full h-[40vh]">
+      <div className="flex w-full h-[23vh]">
         <Stats />
         <Safety />
       </div>

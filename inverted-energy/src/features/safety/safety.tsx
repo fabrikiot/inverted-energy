@@ -59,12 +59,15 @@ export default function Safety() {
   const fluctuate = (value: number, minPercent: number, maxPercent: number) => {
     const percentage = Math.random() * (maxPercent - minPercent) + minPercent;
     const fluctuation = value * (percentage / 100);
-    return Math.max(0, Math.random() > 0.5 ? value + fluctuation : value - fluctuation);
+    return Math.max(
+      0,
+      Math.random() > 0.5 ? value + fluctuation : value - fluctuation
+    );
   };
 
   return (
-    <div className="w-1/2 h-full flex flex-col pl-1">
-      <div className="p-2 bg-[#C9891B] font-bold flex text-white text-lg gap-1 ">
+    <div className="w-[65%] h-full flex flex-col pl-1">
+      <div className="px-2 py-1.5 bg-[#C9891B] font-bold flex h-auto text-white text-lg gap-1 ">
         <img
           src="/public/shield.svg"
           alt=""
@@ -72,22 +75,19 @@ export default function Safety() {
         />
         Safety Alerts
       </div>
-      <Card className="w-full flex flex-row gap-8 py-2 border-2 border-[#C9891B] rounded-none">
-        <Card className="w-1/2 border-none">
-          <CardHeader className="flex flex-row items-center px-4 py-4 pb-4 gap-0.5 sm:px-6 lg:px-8">
+      <Card className="w-full flex flex-row items-center gap-10 px-10 border-2 border-[#C9891B] rounded-none">
+        <Card className="w-[45%] border-none">
+          <CardHeader className="flex flex-row items-center px-4 pb-1 pt-2.5  gap-0.5 sm:px-3 lg:px-4">
             <CardTitle className="text-base text-white font-semibold">
               Temperature Histogram
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[3.8%] sm:gap-8">
+          <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[2.15%] sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[144px]"
+              className="aspect-auto w-full h-[145px]"
             >
-              <BarChart
-                data={barChartData}
-                margin={{ left: 20, top: 30 }}
-              >
+              <BarChart data={barChartData} margin={{ left: 20, top: 30 }}>
                 <defs>
                   <linearGradient id="gradient1" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#28CD41" />
@@ -119,12 +119,13 @@ export default function Safety() {
                     />
                   }
                 />
-                <Bar dataKey="value"  fill="url(#gradient1)" />
+                <Bar dataKey="value" fill="url(#gradient1)" barSize={60} />
               </BarChart>
             </ChartContainer>
           </CardContent>
         </Card>
-        <div className="flex flex-col mt-20 gap-y-3 ">
+        <div className="flex w-[50%] items-center gap-4">
+        <div className="flex flex-col h-auto gap-y-3 ml-32 ">
           {pieChartData1.map((item, index) => (
             <div key={index} className="flex items-center w-48 space-x-3">
               <div
@@ -135,11 +136,11 @@ export default function Safety() {
             </div>
           ))}
         </div>
-        <Card className="w-1/2 border-none">
-          <CardContent className="flex flex-1 flex-col items-center justify-center">
+        <Card className="w-[35%] border-none">
+          <CardContent className="flex  items-center justify-center">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[150px] mt-9"
+              className="aspect-auto w-full h-[150px] "
             >
               <PieChart>
                 <ChartTooltip
@@ -162,6 +163,7 @@ export default function Safety() {
             </ChartContainer>
           </CardContent>
         </Card>
+        </div>
       </Card>
     </div>
   );
