@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Map } from "./features/home/map";
 import Stats from "./features/stats/stats";
@@ -10,12 +10,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hide the loader after 5 seconds
     const timer = setTimeout(() => {
       setLoading(false);
     }, 5000);
 
-    // Cleanup the timer
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,11 +27,11 @@ function App() {
       <div className="w-full h-[7.5vh]">
         <Navbar />
       </div>
-      <div className="flex w-full h-[65vh]">
+      <div className="flex w-full h-[65vh] pt-3 px-4">
         <Performance />
         <Map />
       </div>
-      <div className="flex w-full h-[23vh]">
+      <div className="flex w-full h-[23vh] px-4">
         <Stats />
         <Safety />
       </div>

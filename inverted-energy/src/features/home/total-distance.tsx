@@ -104,7 +104,7 @@ const TotalDistance: React.FC = () => {
               />
             }
           />
-          <Bar dataKey="kms" fill="#369fbc" radius={4} barSize={60} />
+          <Bar dataKey="kms" fill="#369fbc" barSize={60} />
           <Customized
             component={(props: any) => (
               <CustomXAxisLabels

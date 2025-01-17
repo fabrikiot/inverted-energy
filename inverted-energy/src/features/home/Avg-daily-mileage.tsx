@@ -98,7 +98,7 @@ const CustomYAxisTick = (props: any) => {
 
 const AverageDailyMileage = () => {
   return (
-    <div className="aspect-auto w-[90%] h-[200px]">
+    <div className="aspect-auto w-[92.5%] h-[200px]">
       <ChartContainer
         config={chartConfig}
         className="aspect-auto w-[90%] h-[200px]"
@@ -138,7 +138,7 @@ const AverageDailyMileage = () => {
               />
             }
           />
-          <Bar dataKey="desktop" fill="#369fbc" radius={4} barSize={40} />
+          <Bar dataKey="desktop" fill="#369fbc" barSize={33} />
         </BarChart>
       </ChartContainer>
     </div>
