@@ -17,8 +17,8 @@ export default function Performance() {
         </div>
         <span className="pl-[6%]">Performance</span>
       </div>
-      <Card className="w-full flex flex-col gap-5 h-[92.2%] border-2 border-[#3298D8] rounded-none">
-        <Card className="w-full border-none ">
+      <Card className="w-full flex flex-col justify-between h-[92.2%] border-2 border-[#3298D8] rounded-none">
+        <Card className="w-full border-none h-[47%]">
           <CardHeader className="flex flex-row items-center px-4 gap-0.5 sm:px-6 lg:px-8 py-4 ">
             <CardTitle className="text-base text-white font-semibold py-2 pt-5">
               Total Distance Covered
@@ -37,9 +37,9 @@ export default function Performance() {
             <TotalDistance />
           </CardContent>
         </Card>
-        <Card className="w-full border-none">
+        <Card className="w-full border-none h-[47%] pt-2">
           <CardHeader className="flex flex-row items-center px-4  gap-0.5 sm:px-6 lg:px-8">
-            <CardTitle className="text-base text-white font-semibold py-2.5">
+            <CardTitle className="text-base text-white font-semibold ">
               Average Daily Mileage
             </CardTitle>
           </CardHeader>
