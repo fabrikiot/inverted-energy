@@ -122,7 +122,7 @@ export default function Stats() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <Card className="2xl:w-[45%] w-[39%] border-none flex flex-col justify-between 2xl:py-[3%] lg:py-[5%]">
+        <Card className="2xl:w-[45%] w-[39%] border-none flex flex-col justify-between mt-[1%]">
           <CardContent className="h-full flex flex-1 flex-col items-center justify-around ">
             <ChartContainer
               config={chartConfig}
