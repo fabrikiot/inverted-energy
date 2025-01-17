@@ -71,7 +71,7 @@ export default function Safety() {
         <img src="/public/Safety Alerts.svg" alt="" className="size-8 " />
         Safety Alerts
       </div>
-      <Card className="w-full h-full flex flex-row items-center gap-10 px-10 border-2 border-[#C9891B] bg-[#011826] rounded">
+      <Card className="w-full h-full flex flex-row items-center justify-between px-[3%] border-2 border-[#C9891B] bg-[#011826] rounded">
         <Card className="w-[45%] h-full border-none flex flex-col justify-between">
           <CardHeader className="flex flex-row items-center px-4 pb-1 pt-[5%]  gap-0.5 sm:px-3 lg:px-4">
             <CardTitle className="text-base text-white font-semibold">
@@ -81,7 +81,7 @@ export default function Safety() {
           <CardContent className="flex flex-1 flex-col items-center justify-center gap-6 py-[2.15%] sm:gap-8">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[145px]"
+              className="aspect-auto w-full h-[145px] 3xl:h-[190px]"
             >
               <BarChart data={barChartData} margin={{ left: 20, top: 30 }}>
                 <defs>
@@ -118,8 +118,8 @@ export default function Safety() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <div className="flex w-[50%] items-center">
-          <div className="flex flex-col h-auto gap-y-3 ml-24 ">
+        <div className="flex w-[50%] items-center justify-between">
+          <div className="w-[30%] flex flex-col h-auto gap-y-3  ml-[5%]">
             {pieChartData1.map((item, index) => (
               <div key={index} className="flex items-center w-48 space-x-3">
                 <div
@@ -130,7 +130,7 @@ export default function Safety() {
               </div>
             ))}
           </div>
-          <Card className="w-[40%] border-none">
+          <Card className="w-[100%] border-none">
             <CardContent className="flex  items-center justify-center">
               <ChartContainer
                 config={chartConfig}

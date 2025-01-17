@@ -7,7 +7,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Data types
 interface MileageChartData {
   month: string;
   desktop: number;
@@ -27,35 +26,6 @@ const chartConfig = {
   },
 };
 
-// // Custom Y-axis tick renderer
-// const CustomYAxisTick1 = (props: any) => {
-//   const { x, y, payload } = props;
-//   const entry = mileageChartData.find((data) => data.month === payload.value);
-
-//   if (!entry) return null;
-
-//   return (
-//     <g transform={`translate(${x + 10},${y})`} fill="#369fbc">
-//       <image
-//         href={entry.img}
-//         x={-20} 
-//         y={-10} 
-//         width="20"
-//         height="20"
-//       />
-//       {/* Text */}
-//       <text
-//         x={3} // Position the text beside the icon
-//         y={5} // Center the text vertically
-//         fontSize="12"
-//         style={{ fill: "white" }} // Enforcing white color explicitly
-//         textAnchor="start"
-//       >
-//         {entry.month}
-//       </text>
-//     </g>
-//   );
-// };
 
 const CustomYAxisTick = (props: any) => {
   const { x, y, payload } = props;
@@ -64,28 +34,20 @@ const CustomYAxisTick = (props: any) => {
   if (!entry) return null;
 
   return (
-    <g transform={`translate(${x-5},${y})`}>
-      <rect
-        x={-40} 
-        y={-10} 
-        width="98" 
-        height="20" 
-        fill="#369fbc" 
-      />
-      {/* Icon */}
+    <g transform={`translate(${x - 5},${y})`}>
+      <rect x={-40} y={-17} width="98" height="33" fill="#369fbc" />
       <image
         href={entry.img}
-        x={-16} // Adjust position for the icon
-        y={-10} // Center the icon vertically
+        x={-16} 
+        y={-10} 
         width="20"
         height="20"
       />
-      {/* Text */}
       <text
-        x={7} // Position the text beside the icon
-        y={5} // Center the text vertically
+        x={7} 
+        y={5} 
         fontSize="12"
-        fill="white" // Text color
+        fill="white" 
         textAnchor="start"
         style={{ fill: "white" }}
       >
@@ -94,7 +56,6 @@ const CustomYAxisTick = (props: any) => {
     </g>
   );
 };
-
 
 const AverageDailyMileage = () => {
   return (
@@ -127,6 +88,7 @@ const AverageDailyMileage = () => {
             tickMargin={60}
             tick={<CustomYAxisTick />}
             width={88}
+            height={60}
             enableBackground={"#369fbc"}
           />
           <ChartTooltip
