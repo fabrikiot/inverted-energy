@@ -122,11 +122,11 @@ export default function Stats() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <Card className="2xl:w-[45%] w-[39%] border-none flex flex-col justify-between mt-[1%]">
+        <Card className="2xl:w-[45%] w-[39%] border-none  flex flex-col justify-between mt-[1%] ">
           <CardContent className="h-full flex flex-1 flex-col items-center justify-around ">
             <ChartContainer
               config={chartConfig}
-              className="aspect-auto w-full h-[145px]"
+              className="aspect-auto w-full h-[145px]" 
             >
               <PieChart>
                 <ChartTooltip
@@ -147,14 +147,19 @@ export default function Stats() {
                 />
               </PieChart>
             </ChartContainer>
-            <div className="grid grid-cols-2 gap-y-2 md:gap-x-2 2xl:gap-x-12 ">
+            <div className="grid grid-cols-2 gap-y-2 gap-x-8 ml-6">
               {pieChartData.map((item, index) => (
-                <div key={index} className="flex items-center space-x-2">
+                <div
+                  key={index}
+                  className="flex items-center space-x-2 min-w-[120px] max-w-[150px] flex-shrink-0"
+                >
                   <div
-                    className="lg:w-4 lg:h-4 md:w-3 md:h-3 rounded-[3px]"
+                    className="w-4 h-4 sm:w-4 sm:h-4 rounded-[3px] flex-shrink-0"
                     style={{ backgroundColor: item.fill }}
                   ></div>
-                  <div className="text-white xl:text-base">{item.status}</div>
+                  <div className="text-white sm:text-sm   flex-shrink-0">
+                    {item.status}
+                  </div>
                 </div>
               ))}
             </div>
