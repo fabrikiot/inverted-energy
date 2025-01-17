@@ -1,7 +1,7 @@
 export const Map = () => {
   return (
-    <div className="w-[65%] h-full px-1 justify-end flex items-center">
-      <img src="/public/map.gif" className="h-[98%] w-[60%] pt-1" alt="india" />
+    <div className="w-[60%] h-full px-1 justify-end flex items-center">
+      <img src="/public/map.gif" className="h-full w-auto" alt="india" />
       <div className="flex flex-col gap-8 w-[35%]  items-center  justify-between">
         <div className="bg-[#3298d8] rounded-xl w-[8vw] px-9 h-[11vh] flex flex-col items-center justify-center">
           <span className="text-5xl font-bold">437</span>

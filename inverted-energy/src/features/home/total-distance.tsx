@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -13,7 +12,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Data types
 interface DistanceChartData {
   vehicle: string;
   kms: number;
@@ -21,10 +19,10 @@ interface DistanceChartData {
 }
 
 const distanceChartData: DistanceChartData[] = [
-  { vehicle: "2 W", kms: 6652.125, img: "/2W.png" },
-  { vehicle: "3 W", kms: 1178.49735, img: "/3W.png" },
-  { vehicle: "L5", kms: 20.53125, img: "/L5.png" },
-  { vehicle: "Tractors", kms: 12.31875, img: "/TRACTOR.png" },
+  { vehicle: "2 W", kms: 6652.125, img: "/2W.svg" },
+  { vehicle: "3 W", kms: 1178.49735, img: "/3W.svg" },
+  { vehicle: "L5", kms: 20.53125, img: "/L5.svg" },
+  { vehicle: "Tractors", kms: 12.31875, img: "/Tractor.svg" },
 ];
 
 const distanceChartConfig = {
@@ -47,7 +45,7 @@ const CustomXAxisLabels: React.FC<{
             key={`custom-label-${index}`}
             transform={`translate(${x}, ${yPosition})`}
           >
-            <image href={entry.img} width="24" height="22" x={-10} y={-10} />
+            <image href={entry.img} width="20" height="20" x={-10} y={-10} />\
             <text x={15} y={5} fontSize="12" fill="white" textAnchor="start">
               {entry.vehicle}
             </text>
@@ -59,23 +57,6 @@ const CustomXAxisLabels: React.FC<{
 };
 
 const TotalDistance: React.FC = () => {
-  const [chartWidth, setChartWidth] = useState(480);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setChartWidth(window.innerWidth <= 768 ? 320 : 480);
-    };
-
-    // Set initial width
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div className="aspect-auto w-[93%] h-[200px]">
       <ChartContainer
@@ -85,7 +66,7 @@ const TotalDistance: React.FC = () => {
         <BarChart
           data={distanceChartData}
           barGap={2}
-          width={chartWidth}
+          width={window.innerWidth <= 768 ? 320 : 480}
           height={250}
         >
           <CartesianGrid vertical={false} />

@@ -15,10 +15,10 @@ interface MileageChartData {
 }
 
 const mileageChartData: MileageChartData[] = [
-  { month: "2 W", desktop: 80, img: "/2W.png" },
-  { month: "3 W", desktop: 70, img: "/3W.png" },
-  { month: "L5", desktop: 100, img: "/L5.png" },
-  { month: "Tractors", desktop: 60, img: "/TRACTOR.png" },
+  { month: "2 W", desktop: 80, img: "/2W.svg" },
+  { month: "3 W", desktop: 70, img: "/3W.svg" },
+  { month: "L5", desktop: 100, img: "/L5.svg" },
+  { month: "Tractors", desktop: 60, img: "/Tractor.svg" },
 ];
 
 const chartConfig = {
@@ -75,14 +75,14 @@ const CustomYAxisTick = (props: any) => {
       {/* Icon */}
       <image
         href={entry.img}
-        x={-20} // Adjust position for the icon
+        x={-16} // Adjust position for the icon
         y={-10} // Center the icon vertically
         width="20"
         height="20"
       />
       {/* Text */}
       <text
-        x={3} // Position the text beside the icon
+        x={7} // Position the text beside the icon
         y={5} // Center the text vertically
         fontSize="12"
         fill="white" // Text color
@@ -98,7 +98,7 @@ const CustomYAxisTick = (props: any) => {
 
 const AverageDailyMileage = () => {
   return (
-    <div className="aspect-auto w-[92.5%] h-[200px]">
+    <div className="aspect-auto w-[93.5%] h-[200px]">
       <ChartContainer
         config={chartConfig}
         className="aspect-auto w-[90%] h-[200px]"
@@ -126,7 +126,7 @@ const AverageDailyMileage = () => {
             tickLine={false}
             tickMargin={60}
             tick={<CustomYAxisTick />}
-            width={90}
+            width={88}
             enableBackground={"#369fbc"}
           />
           <ChartTooltip

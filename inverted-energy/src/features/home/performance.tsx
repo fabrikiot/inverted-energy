@@ -1,13 +1,12 @@
 "use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import TotalDistance from "./total-distance";
 import AverageDailyMileage from "./Avg-daily-mileage";
 
 export default function Performance() {
   return (
-    <div className="w-[35%] h-full flex flex-col">
-      <div className="p-2 py-1.5 bg-[#3298D8] font-bold flex h-auto text-white text-lg gap-1 ">
+    <div className="w-[40%] h-full flex flex-col">
+      <div className="p-2 py-1.5 bg-[#3298D8] rounded-t font-bold flex h-auto text-white text-lg gap-1 ">
         <div className="flex items-center justify-center size-8 border rounded">
           <img
             src="/Performance Without Border.svg"
@@ -17,7 +16,7 @@ export default function Performance() {
         </div>
         <span >Performance</span>
       </div>
-      <Card className="w-full flex flex-col justify-between h-[92.2%] border-2 border-[#3298D8] rounded-none">
+      <Card className="w-full flex flex-col justify-between h-[92.2%] border-2 border-[#3298D8] rounded-b rounded-t-none">
         <Card className="w-full border-none h-[47%]">
           <CardHeader className="flex flex-row items-center px-4 gap-0.5 sm:px-6 lg:px-8 py-4 ">
             <CardTitle className="text-base text-white font-semibold py-2 pt-5">
