@@ -122,45 +122,45 @@ export default function Safety() {
             </ChartContainer>
           </CardContent>
         </Card>
-        <div className="flex w-[50%] items-center gap-4">
-        <div className="flex flex-col h-auto gap-y-3 ml-32 ">
-          {pieChartData1.map((item, index) => (
-            <div key={index} className="flex items-center w-48 space-x-3">
-              <div
-                className="w-4 h-4 rounded-[3px]"
-                style={{ backgroundColor: item.fill }}
-              ></div>
-              <div className="text-white">{item.status}</div>
-            </div>
-          ))}
-        </div>
-        <Card className="w-[35%] border-none">
-          <CardContent className="flex  items-center justify-center">
-            <ChartContainer
-              config={chartConfig}
-              className="aspect-auto w-full h-[150px] "
-            >
-              <PieChart>
-                <ChartTooltip
-                  cursor={false}
-                  content={
-                    <ChartTooltipContent
-                      hideLabel
-                      className="bg-[#011826] border-[#c9891b] w-[10rem]"
-                    />
-                  }
-                />
-                <Pie
-                  data={pieChartData1}
-                  dataKey="vechiles"
-                  nameKey="status"
-                  innerRadius={50}
-                  outerRadius={70}
-                />
-              </PieChart>
-            </ChartContainer>
-          </CardContent>
-        </Card>
+        <div className="flex w-[50%] items-center">
+          <div className="flex flex-col h-auto gap-y-3 ml-32 ">
+            {pieChartData1.map((item, index) => (
+              <div key={index} className="flex items-center w-48 space-x-3">
+                <div
+                  className="w-4 h-4 rounded-[3px]"
+                  style={{ backgroundColor: item.fill }}
+                ></div>
+                <div className="text-white">{item.status}</div>
+              </div>
+            ))}
+          </div>
+          <Card className="w-[35%] border-none">
+            <CardContent className="flex  items-center justify-center">
+              <ChartContainer
+                config={chartConfig}
+                className="aspect-auto w-full h-[150px] "
+              >
+                <PieChart>
+                  <ChartTooltip
+                    cursor={false}
+                    content={
+                      <ChartTooltipContent
+                        hideLabel
+                        className="bg-[#011826] border-[#c9891b] w-[10rem]"
+                      />
+                    }
+                  />
+                  <Pie
+                    data={pieChartData1}
+                    dataKey="vechiles"
+                    nameKey="status"
+                    innerRadius={50}
+                    outerRadius={70}
+                  />
+                </PieChart>
+              </ChartContainer>
+            </CardContent>
+          </Card>
         </div>
       </Card>
     </div>
