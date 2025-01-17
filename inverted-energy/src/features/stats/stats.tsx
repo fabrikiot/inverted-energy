@@ -9,17 +9,16 @@ import {
 } from "@/components/ui/chart";
 
 const initialBarChartData = [
-  { km: "0-10%", value: 30 },
-  { km: "10-30%", value: 13 },
-  { km: "30-90%", value: 60 },
-  { km: ">90%", value: 24 },
+  { km: "0-10%", value: 4000 },
+  { km: "10-30%", value: 17550 },
+  { km: "30-90%", value: 81000 },
+  { km: ">90%", value: 32400 },
 ];
 
 const initialPieChartData = [
   { status: "Charging", vechiles: 10, fill: "#70AD46" },
   { status: "Idle", vechiles: 20, fill: "#FFC000" },
   { status: "Discharging", vechiles: 70, fill: "#ED7D31" },
-  { status: "Other", vechiles: 20, fill: "#A8A8A8" },
 ];
 
 const chartConfig = {
